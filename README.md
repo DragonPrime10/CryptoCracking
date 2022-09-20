@@ -83,7 +83,7 @@ endmodule
 
 ## Creating the top module
 
-With the control logic finished, we moved onto the top module.  Essentially this entailed calling the different functions in a specified order.  We essentially referred to another diagram (albeit a less detailed one that the one for the control logic) as our basis, and moved on from there.  After testing, we managed to create something that worked:
+With the control logic finished, we moved onto the top module.  Essentially this entailed calling the different functions in a specified order.  We essentially referred to another diagram (albeit a less detailed one than the one for the control logic) as our basis, and moved on from there.  After testing, we managed to create something that worked:
 
 ```
 module top (input logic clk, Start, reset, input logic [63:0] plaintext, ciphertext, output logic [55:0] count, output logic [63:0] Key, output logic FoundKeyNum);
@@ -133,9 +133,12 @@ The only significant error we had turned out to be our states in the control log
 ##Implementation:
 In simulation, our plaintext and ciphertext took around 20 million nanoseconds of simulated time to work, and our final key was 01010101016ee0ba.  It was intentionally designed to be a 6-bit key, to make it easier to find via simulation.  This still took almost an hour of real life time to run, for reference.  Implemented on the dsdb board, our results are shown here:
 
+
 #### The 6th and 5th bits:
+
 ![Image](Bits 6-5.jpg)
 
 
 #### The 4th -> 1st bits:
+
 ![Image](Bits 4-1.jpg)
